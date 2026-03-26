@@ -1,32 +1,30 @@
 #! /usr/bin/env python3
 #! -*- coding: utf-8 -*-
 
-vowels = ['a','e','i','o','u']
+vowels = {'a', 'e', 'i', 'o', 'u'}
 
 def main():
 	while True:
-		userInput = input("Enter a string: ").strip().lower()
-		if userInput:
+		user_input = input("Enter a string: ").strip().lower()
+		if user_input:
 			break
-		else:
-			print("Input can not be empty")
-	vowelCount = 0
-	vowelDictionary = {
-		"a": 0,
-		"e": 0,
-		"i": 0,
-		"o": 0,
-		"u": 0,
-	}
-	for character in userInput:
+		print("Input cannot be empty")
+
+	vowel_count = 0
+	vowel_dictionary = {vowel: 0 for vowel in vowels}
+
+	for character in user_input:
 		if character in vowels:
-			vowelCount += 1
-			vowelDictionary[character] += 1
-	print(f"Input: {userInput}")
-	print(f"Vowels Found: ")
-	for vowel in vowels:
-		if vowelDictionary[vowel] > 0:
-			print(f"{vowel}: {vowelDictionary[vowel]}")
+			vowel_count += 1
+			vowel_dictionary[character] += 1
+
+	print(f"Input: {user_input}")
+	print(f"Total Vowels: {vowel_count}")
+	print("Vowels Found:")
+	
+	for vowel in sorted(vowels):
+		if vowel_dictionary[vowel] > 0:
+			print(f"{vowel}: {vowel_dictionary[vowel]}")
 
 
 if __name__ == "__main__":
