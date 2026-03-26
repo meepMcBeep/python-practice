@@ -1,6 +1,13 @@
 #! /usr/bin/env python3
 #! -*- coding: utf-8 -*-
 
+"""
+Filename: set02_assignment3_countVowelsInString.py
+Author: David Barban
+Date: 03/26/2026
+Description: Ask the user for an input string and return the total count and individual counts of vowels in the string
+"""
+
 vowels = {'a', 'e', 'i', 'o', 'u'}
 
 def main():
