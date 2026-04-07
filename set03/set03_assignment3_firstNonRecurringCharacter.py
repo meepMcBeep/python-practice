@@ -11,10 +11,7 @@ Description: Return the first non-repeating character from an input string
 def build_dict_from_string(some_string):
 	new_dict = {}
 	for character in some_string:
-		if character not in new_dict:
-			new_dict[character] = 1
-		else:
-			new_dict[character] += 1
+		new_dict[character] = new_dict.get(character, 0) + 1
 	return new_dict
 
 def find_non_repeating_characters(some_string, some_dict):
