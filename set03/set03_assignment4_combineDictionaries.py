@@ -25,11 +25,10 @@ def create_two_dictionaries():
 
 def merge_dictionaries(input_dict1, input_dict2):
 	result_dict = {}
-	
-	for key in input_dict1:
-		result_dict[key] = input_dict1[key]
-	for key in input_dict2:
-		result_dict[key] = result_dict.get(key, 0) + input_dict2[key]
+
+	for d in (input_dict1, input_dict2):
+	    for key, value in d.items():
+	        result_dict[key] = result_dict.get(key, 0) + value
 
 	return result_dict
 
@@ -37,11 +36,11 @@ def merge_dictionaries(input_dict1, input_dict2):
 def main():
 	dict1, dict2 = create_two_dictionaries()
 	print(f"Dictionary 1: {dict1}")
-	print(f"Dictionary 2:{dict2}")
+	print(f"Dictionary 2: {dict2}")
 
 	merged_dict = merge_dictionaries(dict1, dict2)
 
-	print(f"Merged and sorted dictionary: {sorted(merged_dict.items())}")
+	print(f"Merged and sorted dictionary: {dict(sorted(merged_dict.items()))}")
 
 if __name__ == "__main__":
 	main()
