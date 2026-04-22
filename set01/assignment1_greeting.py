@@ -10,6 +10,7 @@ Description: This script asks for a user's name and age, then prints their age n
 
 # Your code starts here, after the header and docstring
 #import sys - not used
+#testing from new machine
 
 def main():
     name = input("What is your name? ")
